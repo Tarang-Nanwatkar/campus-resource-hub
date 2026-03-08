@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | IIITM Nexus</title>
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body { background-color: #f8fafc; color: #1e293b; font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .main-title { font-family: 'Outfit', sans-serif; color: #002147; }
+        a { text-decoration: none; }
+
+        .page-intro {
+            background: #ffffff;
+            padding: 5rem 0 3rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .intro-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 4rem;
+            align-items: center;
+        }
+        .intro-text h1 { font-size: 3rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
+        .intro-text p { font-size: 1.1rem; color: #64748b; max-width: 600px; line-height: 1.6; }
+
+        .intro-search .search-box {
+            display: flex;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ffffff;
+            transition: 0.3s;
+        }
+        .intro-search .search-box:focus-within { border-color: #ff6b00; box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1); }
+        .intro-search input { flex: 1; padding: 1rem; border: none; outline: none; font-size: 0.95rem; }
+        .intro-search button { background: #002147; color: white; border: none; padding: 0 1.5rem; cursor: pointer; transition: 0.3s; }
+        .intro-search button:hover { background: #00152e; }
+
+        .content-section { padding: 4rem 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+        .section-header { margin-bottom: 2.5rem; border-left: 5px solid #ff6b00; padding-left: 1rem; }
+        .section-header h2 { font-size: 1.8rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+
+        .card-link { display: block; height: 100%; transition: transform 0.2s ease-in-out; }
+        .card-link:hover { transform: translateY(-5px); }
+
+        .event-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            height: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .card-link:hover .event-card { border-color: #e2e8f0; box-shadow: 0 20px 40px rgba(0, 33, 71, 0.05); }
+
+        .date-box {
+            background: #f8fafc;
+            min-width: 90px;
+            padding: 20px 15px;
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .date-box .day { font-size: 1.8rem; font-weight: 800; color: #002147; line-height: 1; }
+        .date-box .month { font-size: 0.8rem; font-weight: 600; color: #64748b; text-transform: uppercase; margin-top: 5px; }
+
+        .event-details { padding: 20px; display: flex; flex-direction: column; width: 100%; }
+        .event-category {
+            align-self: flex-start;
+            background-color: #fff7ed;
+            color: #ff6b00;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        
+        .flagship-tag { background-color: #ecfdf5; color: #10b981; }
+
+        .event-title { font-size: 1.2rem; color: #002147; margin-bottom: 10px; line-height: 1.3; }
+        .event-desc { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; line-height: 1.5; flex-grow: 1; }
+        .event-meta { display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: #94a3b8; }
+        .event-meta i { width: 16px; color: #002147; }
+
+        .club-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .card-link:hover .club-card { border-color: #e2e8f0; box-shadow: 0 20px 40px rgba(0, 33, 71, 0.05); }
+
+        .club-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .club-name { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #ff6b00; letter-spacing: 1px; margin-bottom: 8px; }
+        .club-event-title { font-size: 1.3rem; margin-bottom: 15px; line-height: 1.3; color: #002147; }
+        .club-meta p { font-size: 0.85rem; color: #64748b; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .club-meta i { color: #002147; }
+
+        .club-action {
+            margin-top: auto;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #002147;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.2s;
+        }
+        .card-link:hover .club-action { color: #ff6b00; gap: 10px; }
+
+        @media (max-width: 900px) {
+            .intro-container { grid-template-columns: 1fr; gap: 2rem; }
+            .intro-text h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/IIITM logo.png" alt="IIITM Logo" class="logo-img">
+                Events
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html" class="nav-cta">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-intro">
+        <div class="intro-container">
+            <div class="intro-text">
+                <h1>Events</h1>
+                <p>Discover workshops, guest lectures, club activities, and flagship festivals happening at ABV-IIITM Gwalior.</p>
+            </div>
+            <div class="intro-search">
+                <div class="search-box">
+                    <input type="text" placeholder="Search events or clubs...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Official University Events</h2>
+            </div>
+            <div class="grid">
+                
+                <a href="#" class="card-link">
+                    <div class="event-card">
+                        <div class="date-box">
+                            <span class="day">13</span>
+                            <span class="month">FEB</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category">FDP</span>
+                            <h3 class="event-title">Advanced Multi-Criteria Decision-Making</h3>
+                            <p class="event-desc">A 5-day FDP focusing on Fuzzy & Grey Techniques in Management Research.</p>
+                            <div class="event-meta">
+                                <span><i class="far fa-clock"></i> 13-17 Feb, 2026</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Management Block</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="card-link">
+                    <div class="event-card">
+                        <div class="date-box">
+                            <span class="day">05</span>
+                            <span class="month">MAR</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category">Short Term Course</span>
+                            <h3 class="event-title">Deep Learning for Agentic NLP</h3>
+                            <p class="event-desc">An intensive course on Deep Learning Foundations for Natural Language Processing.</p>
+                            <div class="event-meta">
+                                <span><i class="far fa-clock"></i> 05-09 Mar, 2026</span>
+                                <span><i class="fas fa-laptop-code"></i> CSE Dept.</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="card-link">
+                    <div class="event-card">
+                        <div class="date-box">
+                            <span class="day">14</span>
+                            <span class="month">MAR</span>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-category flagship-tag">Flagship</span>
+                            <h3 class="event-title">Alumni Meet 2026</h3>
+                            <p class="event-desc">Welcoming back our distinguished alumni for a weekend of networking and nostalgia.</p>
+                            <div class="event-meta">
+                                <span><i class="far fa-clock"></i> 14-15 Mar, 2026</span>
+                                <span><i class="fas fa-users"></i> Main Auditorium</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Club & Cultural Activities</h2>
+            </div>
+            <div class="grid">
+
+                <a href="#" class="card-link">
+                    <div class="club-card">
+                        <div class="club-icon" style="background: #fff1f2; color: #e11d48;">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <span class="club-name">Rotaract Club</span>
+                        <h3 class="club-event-title">Annual Blood Donation Drive</h3>
+                        <div class="club-meta">
+                            <p><i class="far fa-calendar-alt"></i> Feb 22, 2026 &bull; 10:00 AM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Sports Complex</p>
+                        </div>
+                        <span class="club-action">Volunteer <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="#" class="card-link">
+                    <div class="club-card">
+                        <div class="club-icon" style="background: #fff7ed; color: #ea580c;">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <span class="club-name">Uthaan</span>
+                        <h3 class="club-event-title">First Year Interviews</h3>
+                        <div class="club-meta">
+                            <p><i class="far fa-clock"></i> Deadline: 4th Feb &bull; 11:59PM</p>
+                        </div>
+                        <span class="club-action">Submit Entry <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="#" class="card-link">
+                    <div class="club-card">
+                        <div class="club-icon" style="background: #f0f9ff; color: #0284c7;">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <span class="club-name">IEEE Student Branch</span>
+                        <h3 class="club-event-title">Hacksgon 2026</h3>
+                        <div class="club-meta">
+                            <p><i class="far fa-clock"></i> Deadline: Feb 5, 2026 &bull; 11:59PM</p>
+                        </div>
+                        <span class="club-action">Register <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>IIITM-Nexus</h4>
+                <p>Connecting students to world-class opportunities and the resources to seize them.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">All Opportunities</a></li>
+                    <li><a href="#">Featured Events</a></li>
+                    <li><a href="#">Preparation Resources</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Campus Events</a></li>
+                    <li><a href="#">Competitions</a></li>
+                    <li><a href="#">Fellowships & Internships</a></li>
+                    <li><a href="#">Scholarships & Aid</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@nexus.edu">info@nexus.edu</a></li>
+                    <li><a href="#">Contribute</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 IIITM-Nexus. All rights reserved. Made with ❤️ for students.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
