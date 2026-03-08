@@ -2,22 +2,23 @@
    VARIABLES
    ========================================= */
 :root {
-    /* Color Palette */
-    --primary: #1e40af;
-    --primary-dark: #1e3a8a;
-    --accent: #3730a3;
+    --primary: #003366;       
+    --primary-dark: #002244;      
+    --gradient-blue: #00509E; 
+
+    /* Text & Backgrounds */
     --text-main: #1a1a1a;
     --text-light: #666666;
     --text-white: #ffffff;
-    --bg-light: #f8f9fa;
-    --bg-footer: #1a1a1a;
+    --bg-light: #f4f6f9;
+    --bg-footer: #001a33;
 
     /* Effects */
     --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-    --shadow-lg: 0 10px 40px rgba(0,0,0,0.2);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
     --transition: all 0.3s ease;
-    --radius: 16px;
+    --radius: 12px;
 }
 
 * {
@@ -124,7 +125,7 @@ nav {
    HERO SECTION
    ========================================= */
 .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-blue) 100%);
     color: var(--text-white);
     padding: 80px 20px 100px;
     text-align: center;
@@ -418,7 +419,7 @@ h1 {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--text-white);
     padding: 80px 20px;
     text-align: center;

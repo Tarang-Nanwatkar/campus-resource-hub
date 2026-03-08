@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships & Aid | IIITM Nexus</title>
+     <link rel="icon" type="image/png" href="../../assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <div class="page-title">Scholarships & Aid</div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="filters">
+            <div class="filter-header">
+                <h3><i class="fas fa-filter"></i> Filters</h3>
+                <button id="clear-filters">Clear</button>
+            </div>
+            
+            <div class="filter-group">
+                <label>Search</label>
+                <input type="text" id="search-bar" placeholder="e.g. Merit, Adobe...">
+            </div>
+
+            <div class="filter-group">
+                <label>Provider</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="Institute"> Institute</label>
+                    <label><input type="checkbox" value="Government"> Government</label>
+                    <label><input type="checkbox" value="Private"> Private</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Type</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="Merit-based"> Merit-based</label>
+                    <label><input type="checkbox" value="Need-based"> Need-based</label>
+                    <label><input type="checkbox" value="Research"> Research</label>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="results-header">
+                <h1 class="page-heading">Available Opportunities</h1>
+                <span id="result-count">Showing all scholarships</span>
+            </div>
+
+            <div id="scholarship-grid" class="scholarship-grid">
+                <p>Loading scholarships...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
