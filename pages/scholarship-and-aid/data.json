@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Institute Merit-cum-Means Scholarship",
+    "provider": "IIITM Gwalior",
+    "category": "Institute",
+    "type": "Need-based",
+    "amount": "Full Tuition Waiver",
+    "deadline": "2026-08-30",
+    "description": "Awarded to top-performing students from economically weaker sections. Maintains a high CGPA requirement.",
+    "tags": ["UG", "PG"]
+  },
+  {
+    "id": 2,
+    "title": "Central Sector Scheme of Scholarships",
+    "provider": "Govt. of India",
+    "category": "Government",
+    "type": "Merit-based",
+    "amount": "₹10,000 - ₹20,000 per annum",
+    "deadline": "2026-10-15",
+    "description": "For university and college students with above 80th percentile in relevant stream.",
+    "tags": ["UG", "Freshers"]
+  },
+  {
+    "id": 3,
+    "title": "Adobe India Women-in-Tech Scholarship",
+    "provider": "Adobe",
+    "category": "Private",
+    "type": "Diversity",
+    "amount": "$10,000 USD + Internship",
+    "deadline": "2026-09-10",
+    "description": "Recognizing outstanding female students in computer science and engineering fields.",
+    "tags": ["Women", "Engineering"]
+  },
+  {
+    "id": 4,
+    "title": "ONGC Scholarship for SC/ST",
+    "provider": "ONGC",
+    "category": "Private",
+    "type": "Need-based",
+    "amount": "₹48,000 per annum",
+    "deadline": "2026-11-01",
+    "description": "Exclusive financial assistance for meritorious SC/ST students pursuing engineering or MBA.",
+    "tags": ["SC/ST", "Engineering", "MBA"]
+  },
+  {
+    "id": 5,
+    "title": "Google PhD Fellowship Program",
+    "provider": "Google",
+    "category": "Private",
+    "type": "Research",
+    "amount": "$50,000 USD + Mentor",
+    "deadline": "2026-05-15",
+    "description": "Supporting outstanding graduate students doing exceptional research in computer science.",
+    "tags": ["PhD", "Research"]
+  }
+]
