@@ -33,7 +33,7 @@
                 <li><a href="#resources">Resources</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#get-started" class="nav-cta">Sign In</a></li>
+                <li><a href="#get-started" class="nav-cta" id="signin-btn">Sign In</a></li>
             </ul>
         </nav>
     </header>
@@ -180,7 +180,7 @@
         <div class="container">
             <h2 class="section-title" style="color: white;">Ready to Unlock Your Potential?</h2>
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.95;">Be among the first to experience a smarter way to discover and prepare for opportunities.</p>
-            <a href="#" class="cta-button">Get Started Today</a>
+            <a href="#" class="cta-button" id="cta-button">Get Started Today</a>
         </div>
     </section>
 
@@ -200,9 +200,9 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">All Opportunities</a></li>
-                    <li><a href="#">Featured Events</a></li>
-                    <li><a href="#">Preparation Resources</a></li>
+                    <li><a href="#opportunities">All Opportunities</a></li>
+                    <li><a href="pages\events\index.html">Featured Events</a></li>
+                    <li><a href="#resources">Preparation Resources</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </div>
@@ -210,10 +210,10 @@
             <div class="footer-section">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Competitions</a></li>
-                    <li><a href="#">Fellowships & Internships</a></li>
-                    <li><a href="#">Scholarships & Aid</a></li>
+                    <li><a href="pages\events\index.html">Events</a></li>
+                    <li><a href="pages\competition\index.html">Competitions</a></li>
+                    <li><a href="pages\fellowships\index.html">Fellowships & Internships</a></li>
+                    <li><a href="pages\scholarship-and-aid\index.html">Scholarships & Aid</a></li>
                 </ul>
             </div>
             
@@ -232,7 +232,82 @@
             <p>&copy; 2026 IIITM-Nexus. All rights reserved. Made with ❤️ for students.</p>
         </div>
     </footer>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGzqCTEXBf3TFFPstzWbLefaLsqjHCwms",
+            authDomain: "iiitm-nexus.firebaseapp.com",
+            projectId: "iiitm-nexus",
+            storageBucket: "iiitm-nexus.firebasestorage.app",
+            messagingSenderId: "89898919974",
+            appId: "1:89898919974:web:00d91ecd015366bf99dee7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        const ctaBtn = document.getElementById('cta-button');
+        const navBtn = document.getElementById('signin-btn');
+        const ctaSection = document.getElementById('get-started');
+
+        const handleLogin = (e) => {
+            e.preventDefault();
+            signInWithPopup(auth, provider).catch((error) => {
+                console.error("Login Error:", error.message);
+            });
+        };
+
+        if (ctaBtn) ctaBtn.addEventListener('click', handleLogin);
+        
+        if (navBtn) {
+            navBtn.addEventListener('click', (e) => {
+                if (auth.currentUser) {
+                    e.preventDefault();
+                    if(confirm("Are you sure you want to sign out?")) {
+                        signOut(auth).then(() => {
+                            console.log("User signed out."); 
+                        }).catch((error) => {
+                            console.error("Sign Out Error:", error);
+                        });
+                    }
+                }
+            });
+        }
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                if (user.email.endsWith('@iiitm.ac.in')) {
+                    const firstName = user.displayName.split(' ')[0];
+
+                    if (navBtn) {
+                        navBtn.innerText = firstName;
+                        navBtn.href = "#";
+                        navBtn.title = "Click to sign out";
+                    }
+
+                    if (ctaSection) {
+                        ctaSection.style.display = "none";
+                    }
+                    
+                } else {
+                    auth.signOut();
+                    alert("Access Denied: Please use your official @iiitm.ac.in email address.");
+                }
+            } else {
+                if (ctaSection) {
+                    ctaSection.style.display = "block";
+                }
+                if (navBtn) {
+                    navBtn.innerText = "Sign In";
+                    navBtn.href = "#get-started";
+                    navBtn.removeAttribute('title');
+                }
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
