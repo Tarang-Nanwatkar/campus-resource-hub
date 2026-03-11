@@ -67,4 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    document.getElementById('more-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert("This page is currently under development. Stay tuned!");
+});
 });

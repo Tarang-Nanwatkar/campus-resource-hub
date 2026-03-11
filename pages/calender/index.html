@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Calendar | Student Resources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .calendar-card {
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #e5e7eb;
+        }
+        .calendar-card:hover {
+            border-color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .date-badge {
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e3a8a; /* blue-900 */
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-slate-900">
+
+    <header class="py-12 text-center border-b border-gray-50">
+        <nav class="mb-4">
+            <a href="../../index.html" class="text-blue-800 text-sm font-semibold hover:underline">
+                <i class="fas fa-chevron-left mr-1"></i> Back to Home
+            </a>
+        </nav>
+        <h1 class="text-4xl font-bold text-slate-800">Academic Calendar 2026</h1>
+        <p class="text-slate-500 mt-2">Plan your semester, exams, and holidays.</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            
+            <div class="calendar-card flex items-center p-8 rounded-xl bg-white border-blue-900 shadow-sm cursor-pointer group">
+                <div class="w-14 h-14 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="ml-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-1">Registration Open</h2>
+                    <p class="text-blue-800 font-semibold text-sm">Deadline: Dec 31st</p>
+                </div>
+            </div>
+
+            <div class="calendar-card flex items-center p-8 rounded-xl bg-white cursor-pointer group">
+                <div class="w-14 h-14 date-badge rounded-full flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="ml-6">
+                    <h2 class="text-xl font-bold text-slate-800 mb-1">Final Examinations</h2>
+                    <p class="text-blue-800 font-semibold text-sm">Starts: April 27th</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <div class="bg-slate-50 p-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-slate-800">Even Semester Schedule</h3>
+                <button class="text-blue-800 font-semibold text-sm hover:underline">
+                    <i class="fas fa-download mr-1"></i> Download PDF
+                </button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="text-slate-400 text-xs uppercase tracking-wider">
+                            <th class="px-8 py-4 font-semibold">Event</th>
+                            <th class="px-8 py-4 font-semibold">Start Date</th>
+                            <th class="px-8 py-4 font-semibold">End Date</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-t border-gray-100 hover:bg-slate-50 transition">
+                            <td class="px-8 py-5 font-bold text-slate-700">Classes</td>
+                            <td class="px-8 py-5 text-slate-500">Jan 1, 2026</td>
+                            <td class="px-8 py-5 text-slate-500">April 21, 2026</td>
+                        </tr>
+                        <tr class="border-t border-gray-100 hover:bg-slate-50 transition">
+                            <td class="px-8 py-5 font-bold text-slate-700"> Mid Semester Exam</td>
+                            <td class="px-8 py-5 text-slate-500">Feb 23, 2026</td>
+                            <td class="px-8 py-5 text-slate-500">Feb 28,2026</td>
+                        </tr>
+                        <tr class="border-t border-gray-100 hover:bg-slate-50 transition">
+                            <td class="px-8 py-5 font-bold text-slate-700">Midsem break</td>
+                            <td class="px-8 py-5 text-slate-500">March 01, 2026</td>
+                            <td class="px-8 py-5 text-slate-500">March 08, 2026</td>
+                        </tr>
+                        <tr class="border-t border-gray-100 hover:bg-slate-50 transition">
+                            <td class="px-8 py-5 font-bold text-slate-700">Endsem Exam</td>
+                            <td class="px-8 py-5 text-slate-500">April 27, 2026</td>
+                            <td class="px-8 py-5 text-slate-500">May 03</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 IIITM-Nexus. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
