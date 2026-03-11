@@ -1,0 +1,64 @@
+{
+  "opportunities": [
+    {
+      "id": 1,
+      "provider": "Internship",
+      "providerClass": "",
+      "company": "Google India",
+      "title": "Software Engineering Intern",
+      "location": "Bangalore / Hyderabad",
+      "duration": "Summer (2 Months)",
+      "workMode": "On-site",
+      "description": "Join our engineering team to build scalable software solutions. Open to pre-final year students pursuing B.Tech/M.Tech.",
+      "tags": ["Stipend: Paid", "Pre-Final Year", "On-site"],
+      "deadline": "Mar 30",
+      "link": "#",
+      "type": "Corporate Internship"
+    },
+    {
+      "id": 2,
+      "provider": "Fellowship",
+      "providerClass": "badge-fellowship",
+      "company": "Indian Academy of Sciences",
+      "title": "Summer Research Fellowship",
+      "location": "Pan-India Institutes",
+      "duration": "Summer (2 Months)",
+      "workMode": "On-site",
+      "description": "Work alongside distinguished scientists on cutting-edge research projects. Covers round-trip train fare and a monthly fellowship stipend.",
+      "tags": ["Stipend: ₹12,500/mo", "Research", "On-site"],
+      "deadline": "April 15",
+      "link": "#",
+      "type": "Research Fellowship"
+    },
+    {
+      "id": 3,
+      "provider": "Open Source",
+      "providerClass": "Google",
+      "company": "Google Summer of Code (GSoC)",
+      "title": "Student Contributor",
+      "location": "Remote",
+      "duration": "Flexible",
+      "workMode": "Remote",
+      "description": "Write code and learn about open source software development while earning a stipend. Proposals require careful preparation.",
+      "tags": ["Stipend: $1,500 - $3,000", "All Years", "Remote"],
+      "deadline": "April 2",
+      "link": "#",
+      "type": "Open Source"
+    },
+    {
+      "id": 4,
+      "provider": "Fellowship",
+      "providerClass": "",
+      "company": "Liberty Fund.Inc and GMU",
+      "title": "Adam Smith Fellowship",
+      "location": "Mercatus Center, George Mason University",
+      "duration": "1 year",
+      "workMode": "On-site",
+      "description": "The fellowship seeks to critically engage key thinkers in the field of political economy. Applicants need to submit a cover letter and a CV, and answer a few short questions. Selected candidates will receive an award of up to 7,000 USD and mentoring from subject experts.",
+      "tags": ["Stipend: upto $7,000", "PhD Students", "On-site"],
+      "deadline": "March 15",
+      "link": "#",
+      "type": "Research Fellowship"
+    }
+  ]
+}

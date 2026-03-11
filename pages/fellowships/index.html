@@ -6,141 +6,11 @@
     <title>Fellowships & Internships | IIITM Nexus</title>
     
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css"> 
+    
     <link rel="icon" type="image/png" href="../../assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-    <style>
-
-        body { background-color: #f8fafc; color: #1e293b; font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; color: #002147; }
-        a { text-decoration: none; }
-
-        .page-intro {
-            background: #ffffff;
-            padding: 4rem 0 3rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .intro-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-        .intro-text h1 { font-size: 3rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
-        .intro-text p { font-size: 1.1rem; color: #64748b; max-width: 600px; line-height: 1.6; }
-
-        .portal-layout {
-            max-width: 1200px;
-            margin: 3rem auto 5rem;
-            padding: 0 5%;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .filters {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            position: sticky;
-            top: 100px;
-        }
-        .filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0; }
-        .filter-header h3 { font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
-        #clear-filters { background: none; border: none; color: #64748b; cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
-        #clear-filters:hover { color: #ff6b00; }
-
-        .filter-group { margin-bottom: 25px; }
-        .filter-group label.group-label { display: block; font-weight: 600; margin-bottom: 12px; font-size: 0.95rem; color: #002147; }
-        
-        #search-bar {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            outline: none;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-        #search-bar:focus { border-color: #ff6b00; box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1); }
-
-        .checkbox-group label { display: flex; align-items: center; margin-bottom: 10px; font-weight: 400; cursor: pointer; font-size: 0.9rem; color: #475569; }
-        .checkbox-group input { margin-right: 10px; accent-color: #002147; width: 16px; height: 16px; cursor: pointer; }
-
-        /* --- CONTENT AREA & JS CARD TARGETS --- */
-        .results-header { margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-end; }
-        .page-heading { font-size: 1.8rem; margin-bottom: 5px; }
-        #result-count { color: #64748b; font-size: 0.9rem; }
-
-        .role-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-
-        .card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.2s ease-in-out;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            height: 100%;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 33, 71, 0.05);
-            border-color: #e2e8f0;
-        }
-
-        .card-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px; }
-        .provider-badge {
-            background: #f8fafc;
-            color: #475569;
-            border: 1px solid #e2e8f0;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .badge-fellowship { background: #fff7ed; color: #ff6b00; border-color: #ffedd5; }
-
-        .company-name { font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 4px; display: block; }
-        .card h3 { font-size: 1.3rem; margin-bottom: 12px; line-height: 1.3; color: #002147; }
-        
-        .role-details { display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.85rem; color: #475569; font-weight: 500; }
-        .role-details i { color: #002147; margin-right: 4px; }
-
-        .desc { color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
-
-        .tags { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-        .tag { font-size: 0.75rem; background: #f1f5f9; color: #64748b; padding: 4px 10px; border-radius: 6px; font-weight: 500; }
-
-        .card-footer { border-top: 1px solid #e2e8f0; padding-top: 15px; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
-        .deadline { font-size: 0.85rem; color: #94a3b8; font-weight: 500; }
-        .deadline i { margin-right: 5px; color: #002147; }
-
-        .apply-btn {
-            background: #ffffff;
-            color: #002147;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid #e2e8f0;
-            transition: 0.2s;
-        }
-        .apply-btn:hover { background: #002147; color: #ffffff; border-color: #002147; }
-
-        @media (max-width: 900px) {
-            .portal-layout { grid-template-columns: 1fr; gap: 2rem; }
-            .filters { position: static; }
-            .results-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-        }
-    </style>
 </head>
 <body>
 
@@ -150,10 +20,7 @@
                 <img src="../../assets/IIITM logo.png" alt="IIITM Logo" class="logo-img">
                 Fellowships & Internships
             </a>
-            <button class="menu-toggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="../../index.html" class="nav-cta">Home</a></li>
             </ul>
         </nav>
@@ -169,7 +36,6 @@
     </section>
 
     <div class="portal-layout">
-        
         <aside class="filters">
             <div class="filter-header">
                 <h3><i class="fas fa-filter"></i> Filters</h3>
@@ -186,16 +52,7 @@
                 <div class="checkbox-group">
                     <label><input type="checkbox" value="Corporate Internship"> Corporate Internship</label>
                     <label><input type="checkbox" value="Research Fellowship"> Research Fellowship</label>
-                    <label><input type="checkbox" value="Open Source"> Open Source (GSoC, etc.)</label>
-                </div>
-            </div>
-
-            <div class="filter-group">
-                <label class="group-label">Duration</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" value="Summer (2 Months)"> Summer (2 Months)</label>
-                    <label><input type="checkbox" value="6 Months"> 6 Months</label>
-                    <label><input type="checkbox" value="Flexible"> Flexible / Part-time</label>
+                    <label><input type="checkbox" value="Open Source"> Open Source</label>
                 </div>
             </div>
 
@@ -212,90 +69,11 @@
         <main class="content-area">
             <div class="results-header">
                 <h2 class="page-heading">Open Roles</h2>
-                <span id="result-count">Showing 3 opportunities</span>
+                <span id="result-count">Loading opportunities...</span>
             </div>
 
             <div id="role-grid" class="role-grid">
-                
-                <article class="card">
-                    <div class="card-header">
-                        <span class="provider-badge">Internship</span>
-                    </div>
-                    <span class="company-name">Google India</span>
-                    <h3>Software Engineering Intern</h3>
-                    
-                    <div class="role-details">
-                        <span><i class="fas fa-map-marker-alt"></i> Bangalore / Hyderabad</span>
-                        <span><i class="fas fa-clock"></i> Summer (2 Months)</span>
-                    </div>
-
-                    <p class="desc">Join our engineering team to build scalable software solutions. Open to pre-final year students pursuing B.Tech/M.Tech.</p>
-                    
-                    <div class="tags">
-                        <span class="tag">Stipend: Paid</span>
-                        <span class="tag">Pre-Final Year</span>
-                        <span class="tag">On-site</span>
-                    </div>
-
-                    <div class="card-footer">
-                        <span class="deadline"><i class="far fa-calendar-alt"></i> Closes: Mar 30</span>
-                        <a href="#" class="apply-btn">View Details</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-header">
-                        <span class="provider-badge badge-fellowship">Fellowship</span>
-                    </div>
-                    <span class="company-name">Indian Academy of Sciences</span>
-                    <h3>Summer Research Fellowship</h3>
-                    
-                    <div class="role-details">
-                        <span><i class="fas fa-map-marker-alt"></i> Pan-India Institutes</span>
-                        <span><i class="fas fa-clock"></i> 2 Months</span>
-                    </div>
-
-                    <p class="desc">Work alongside distinguished scientists on cutting-edge research projects. Covers round-trip train fare and a monthly fellowship stipend.</p>
-                    
-                    <div class="tags">
-                        <span class="tag">Stipend: ₹12,500/mo</span>
-                        <span class="tag">Research</span>
-                        <span class="tag">On-site</span>
-                    </div>
-
-                    <div class="card-footer">
-                        <span class="deadline"><i class="far fa-calendar-alt"></i> Closes: April 15</span>
-                        <a href="#" class="apply-btn">View Details</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-header">
-                        <span class="provider-badge">Open Source</span>
-                    </div>
-                    <span class="company-name">Google Summer of Code (GSoC)</span>
-                    <h3>Student Contributor</h3>
-                    
-                    <div class="role-details">
-                        <span><i class="fas fa-laptop-house"></i> Remote</span>
-                        <span><i class="fas fa-clock"></i> 12+ Weeks</span>
-                    </div>
-
-                    <p class="desc">Write code and learn about open source software development while earning a stipend. Proposals require careful preparation with mentor organizations.</p>
-                    
-                    <div class="tags">
-                        <span class="tag">Stipend: $1,500 - $3,000</span>
-                        <span class="tag">All Years</span>
-                        <span class="tag">Remote</span>
-                    </div>
-
-                    <div class="card-footer">
-                        <span class="deadline"><i class="far fa-calendar-alt"></i> Proposals: April 2</span>
-                        <a href="#" class="apply-btn">View Details</a>
-                    </div>
-                </article>
-
-            </div>
+                </div>
         </main>
     </div>
 
@@ -349,6 +127,6 @@
     </footer>
 
     <script src="../../script.js"></script>
-    <script src="internships-script.js"></script> 
+    <script src="script.js"></script> 
 </body>
 </html>
