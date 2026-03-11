@@ -1,0 +1,40 @@
+{
+  "competitions": [
+    {
+      "id": 1,
+      "tag": "Government of India",
+      "title": "Smart India Hackathon",
+      "description": "Collaborate with various ministries to solve real-world problems. National level recognition for winners.",
+      "status": "OPEN",
+      "statusClass": "status-open",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "tag": "Corporate | TCS",
+      "title": "CodeVita Season 13",
+      "description": "The world's largest coding competition. Top performers get direct interview calls for roles at TCS.",
+      "status": "OPEN",
+      "statusClass": "status-open",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "tag": "International | Microsoft",
+      "title": "Imagine Cup 2026",
+      "description": "Create a solution that tackles a global problem. Compete with students worldwide.",
+      "status": "CLOSING SOON",
+      "statusClass": "status-warning",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "tag": "International | IMA",
+      "title": "IMA Student Case Competition",
+      "description": "The Institute of Management Accountants invites teams of 3 to 5 members to solve a case challenge on market entry. Six shortlisted teams will get to present their analysis in the finals. The top three teams will be awarded 500 USD, 200 USD, and 100 USD, respectively",
+      "status": "OPEN",
+      "statusClass": "status-open",
+      "link": "#"
+    }
+  ]
+}

@@ -7,175 +7,9 @@
 
     <link rel="icon" type="image/png" href="../../assets/favicon.png">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        h1, h2, h3 { font-family: 'Outfit', sans-serif; color: #002147; }
-
-        .page-intro {
-            background: #ffffff;
-            padding: 5rem 0 3rem; 
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .intro-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .intro-text h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
-        }
-
-        .intro-text p {
-            font-size: 1.1rem;
-            color: #64748b;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
-        .intro-search .search-box {
-            display: flex;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #ffffff;
-            transition: 0.3s;
-        }
-        
-        .intro-search .search-box:focus-within {
-            border-color: #ff6b00;
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
-        }
-
-        .intro-search input {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            outline: none;
-            font-size: 0.95rem;
-        }
-
-        .intro-search button {
-            background: #002147;
-            color: white;
-            border: none;
-            padding: 0 1.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        
-        .intro-search button:hover { background: #00152e; }
-
-        .grid-section {
-            padding: 4rem 0;
-        }
-
-        .grid-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .comp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .comp-card-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            height: 100%;
-        }
-
-        .comp-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.2s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            border: 1px solid transparent; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        
-        .comp-card-link:hover .comp-card {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 33, 71, 0.05);
-            border-color: #e2e8f0;
-        }
-
-        .comp-card .tag {
-            color: #ff6b00;
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.75rem;
-        }
-
-        .comp-card h3 {
-            margin-bottom: 0.75rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .comp-card p {
-            color: #64748b;
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-
-        .comp-meta {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-        
-        .comp-meta .status {
-            font-weight: 600;
-            color: #1e293b;
-        }
-        
-        .comp-meta .status-pill {
-            padding: 4px 10px;
-            border-radius: 100px;
-            font-weight: 700;
-            font-size: 0.75rem;
-        }
-        
-        .status-open { background-color: #ecfdf5; color: #10b981; }
-        .status-warning { background-color: #fff7ed; color: #ff6b00; }
-
-        @media (max-width: 900px) {
-            .intro-container { grid-template-columns: 1fr; gap: 2rem; }
-            .intro-text h1 { font-size: 2.2rem; }
-        }
-    </style>
 </head>
 <body>
 
@@ -185,14 +19,7 @@
                 <img src="../../assets/IIITM logo.png" alt="IIITM Logo" class="logo-img">
                 Competitions
             </a>
-            
-            <button class="menu-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="../../index.html" class="nav-cta">Home</a></li>
             </ul>
         </nav>
@@ -202,12 +29,11 @@
         <div class="intro-container">
             <div class="intro-text">
                 <h1>Competition Hub</h1>
-                <p>Engineering challenges, government hackathons, and global innovation stages curated for ABV-IIITM Gwalior students.</p>
+                <p>Engineering challenges, government hackathons, and global innovation stages curated for students.</p>
             </div>
-            
             <div class="intro-search">
                 <div class="search-box">
-                    <input type="text" placeholder="Search challenges (e.g. SIH, CodeVita)...">
+                    <input type="text" id="searchInput" placeholder="Search...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
             </div>
@@ -216,45 +42,7 @@
 
     <main class="grid-section">
         <div class="grid-container">
-            <div class="comp-grid">
-                
-                <a href="#" class="comp-card-link">
-                    <article class="comp-card">
-                        <span class="tag">Government of India</span>
-                        <h3>Smart India Hackathon</h3>
-                        <p>Collaborate with various ministries to solve real-world problems. National level recognition for winners.</p>
-                        <div class="comp-meta">
-                            <span>Status:</span>
-                            <span class="status-pill status-open">OPEN</span>
-                        </div>
-                    </article>
-                </a>
-
-                <a href="#" class="comp-card-link">
-                    <article class="comp-card">
-                        <span class="tag">Corporate | TCS</span>
-                        <h3>CodeVita Season 13</h3>
-                        <p>The world's largest coding competition. Top performers get direct interview calls for roles at TCS.</p>
-                        <div class="comp-meta">
-                            <span>Status:</span>
-                            <span class="status-pill status-open">OPEN</span>
-                        </div>
-                    </article>
-                </a>
-
-                <a href="#" class="comp-card-link">
-                    <article class="comp-card">
-                        <span class="tag">International | Microsoft</span>
-                        <h3>Imagine Cup 2026</h3>
-                        <p>Create a solution that tackles a global problem. Compete with students worldwide.</p>
-                        <div class="comp-meta">
-                            <span>Status:</span>
-                            <span class="status-pill status-warning">CLOSING SOON</span>
-                        </div>
-                    </article>
-                </a>
-
-            </div>
+            <div class="comp-grid" id="compGrid"></div>
         </div>
     </main>
 
@@ -306,7 +94,5 @@
             <p>&copy; 2026 IIITM-Nexus. All rights reserved. Made with ❤️ for students.</p>
         </div>
     </footer>
-
-    <script src="../../script.js"></script>
-</body>
+    <script src="script.js"></script> </body>
 </html>

@@ -53,5 +53,16 @@
     "deadline": "2026-05-15",
     "description": "Supporting outstanding graduate students doing exceptional research in computer science.",
     "tags": ["PhD", "Research"]
+  },
+  {
+    "id": 6,
+    "title": "LIC Golden Jubilee Scholarship",
+    "provider": "Life Insurance Corporation of India",
+    "category": "Public",
+    "type": "Need-based",
+    "amount": "Rs 15-40K",
+    "deadline": "2026-09-30",
+    "description": "LIC Golden Jubilee Scholarship Scheme provides financial assistance to meritorious students from economically weaker sections pursuing higher education. The scholarship supports students in Medical, Engineering, General Graduation, Diploma, and ITI courses with amounts ranging from ₹15,000 to ₹40,000 annually based on the course type.",
+    "tags": ["All India"]
   }
 ]

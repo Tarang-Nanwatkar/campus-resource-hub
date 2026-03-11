@@ -1,0 +1,72 @@
+{
+  "universityEvents": [
+    {
+      "day": "13",
+      "month": "FEB",
+      "category": "FDP",
+      "categoryClass": "",
+      "title": "Advanced Multi-Criteria Decision-Making",
+      "desc": "A 5-day FDP focusing on Fuzzy & Grey Techniques in Management Research.",
+      "time": "13-17 Feb, 2026",
+      "location": "Management Block, IIITM",
+      "link": "#"
+    },
+    {
+      "day": "05",
+      "month": "MAR",
+      "category": "Short Term Course",
+      "categoryClass": "",
+      "title": "Deep Learning for Agentic NLP",
+      "desc": "An intensive course on Deep Learning Foundations for Natural Language Processing.",
+      "time": "05-09 Mar, 2026",
+      "location": "CSE Dept, IIITM",
+      "link": "#"
+    },
+    {
+      "day": "14",
+      "month": "MAR",
+      "category": "Flagship",
+      "categoryClass": "flagship-tag",
+      "title": "Alumni Meet 2026",
+      "desc": "Welcoming back our distinguished alumni for a weekend of networking and nostalgia.",
+      "time": "14-15 Mar, 2026",
+      "location": "Main Auditorium, IIITM",
+      "link": "#"
+    }
+  ],
+  "clubActivities": [
+    {
+      "club": "Rotaract Club",
+      "title": "Annual Blood Donation Drive",
+      "icon": "fa-hands-helping",
+      "iconBg": "#fff1f2",
+      "iconColor": "#e11d48",
+      "meta": "Feb 22, 2026 • 10:00 AM",
+      "location": "Sports Complex",
+      "actionText": "Volunteer",
+      "link": "#"
+    },
+    {
+      "club": "Uthaan",
+      "title": "First Year Interviews",
+      "icon": "fa-pen-nib",
+      "iconBg": "#fff7ed",
+      "iconColor": "#ea580c",
+      "meta": "Deadline: 4th Feb • 11:59PM",
+      "location": "",
+      "actionText": "Submit Entry",
+      "link": "#"
+    },
+    {
+      "club": "IEEE Student Branch",
+      "title": "Hacksgon 2026",
+      "icon": "fa-microchip",
+      "iconBg": "#f0f9ff",
+      "iconColor": "#0284c7",
+      "meta": "Deadline: Feb 5, 2026 • 11:59PM",
+      "location": "",
+      "actionText": "Register",
+      "link": "#"
+    }
+  ]
+}
